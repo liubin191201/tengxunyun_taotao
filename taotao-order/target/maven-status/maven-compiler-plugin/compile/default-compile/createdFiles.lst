@@ -1,0 +1,8 @@
+com\taotao\order\dao\JedisClient.class
+com\taotao\order\service\impl\OrderServiceImpl.class
+com\taotao\order\bean\OrderInfoBean.class
+com\taotao\order\service\OrderService.class
+com\taotao\order\dao\impl\JedisClientPoolImpl.class
+com\taotao\order\util\RedisKeyUtil.class
+com\taotao\order\controller\OrderController.class
+com\taotao\order\dao\impl\JedisClientClusterImpl.class

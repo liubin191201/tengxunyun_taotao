@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <uri name="http://www.springframework.org/schema/context" uri="file:///I:/baiduyun/参考资料（更多视频教程关注微信公众号菜鸟要飞）/spring约束/spring-context-4.2.xsd"/>
+  <uri name="http://www.springframework.org/schema/mvc" uri="file:///I:/baiduyun/参考资料（更多视频教程关注微信公众号菜鸟要飞）/spring约束/spring-mvc-4.2.xsd"/>
+  <uri name="http://www.springframework.org/schema/beans" uri="file:///I:/baiduyun/参考资料（更多视频教程关注微信公众号菜鸟要飞）/spring约束/spring-beans-4.2.xsd"/>
+  <uri name="http://www.springframework.org/schema/tx" uri="file:///I:/baiduyun/参考资料（更多视频教程关注微信公众号菜鸟要飞）/spring约束/spring-tx-4.2.xsd"/>
+</catalog>

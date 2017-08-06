@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommitComments>	<CommitComment>order</CommitComment>
+	<CommitComment>初始导入。</CommitComment>
+	<CommitComment>sso</CommitComment>
+	<CommitComment>search</CommitComment>
+	<CommitComment>rest</CommitComment>
+	<CommitComment>portal</CommitComment>
+	<CommitComment>item规格参数</CommitComment>
+	<CommitComment>图片上传需要用到的pom</CommitComment>
+	<CommitComment>类目新增查询</CommitComment>
+	<CommitComment>类目查询</CommitComment>
+</CommitComments>

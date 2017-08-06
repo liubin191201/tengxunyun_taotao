@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=taotao-manager-service/src\/main\/java&lt;com.taotao.service{ImageService.java[ImageService" modifiers="513" timestamp="1488693602038"/>
+<typeInfo handle="=taotao-manager-service/D:\/Program Files\/Java\/jdk1.8.0_121\/jre\/lib\/rt.jar&lt;javax.imageio.stream(ImageOutputStream.class[ImageOutputStream" modifiers="1537" timestamp="1486876329502"/>
+<typeInfo handle="=taotao-common/D:\/Program Files\/Java\/jdk1.8.0_121\/jre\/lib\/rt.jar&lt;java.io(Serializable.class[Serializable" modifiers="1537" timestamp="1486876329502"/>
+<typeInfo handle="=taotao-manager-service/src\/main\/java&lt;com.taotao.service{ItemParamService.java[ItemParamService" modifiers="513" timestamp="1491749105409"/>
+<typeInfo handle="=taotao-manager-service/src\/main\/java&lt;com.taotao.service{ItemCatService.java[ItemCatService" modifiers="513" timestamp="1486131445094"/>
+<typeInfo handle="=taotao-rest/src\/main\/java&lt;com.taotao.rest.service{TbItemCatService.java[TbItemCatService" modifiers="513" timestamp="1492303381669"/>
+<typeInfo handle="=taotao-manager-service/D:\/Program Files\/Java\/jdk1.8.0_121\/jre\/lib\/rt.jar&lt;javax.swing.text(AbstractDocument$Content.class[Content" modifiers="1545" timestamp="1486876329502"/>
+<typeInfo handle="=taotao-manager-service/src\/main\/java&lt;com.taotao.service{ContentCatgoryService.java[ContentCatgoryService" modifiers="513" timestamp="1494166508537"/>
+<typeInfo handle="=taotao-manager-web/F:\/淘淘商城mvn本地仓库\/org\/springframework\/spring-web\/4.1.3.RELEASE\/spring-web-4.1.3.RELEASE.jar&lt;org.springframework.web(WebApplicationInitializer.class[WebApplicationInitializer" modifiers="1537" timestamp="1486038726679"/>
+<typeInfo handle="=taotao-manager-service/src\/main\/java&lt;com.taotao.service{ContentService.java[ContentService" modifiers="513" timestamp="1494646123260"/>
+<typeInfo handle="=taotao-rest/src\/main\/java&lt;com.taotao.rest.service{TbContentService.java[TbContentService" modifiers="513" timestamp="1494767494350"/>
+<typeInfo handle="=taotao-manager-dao/src\/main\/java&lt;com.taotao.mapper{TbContentCategoryMapper.java[TbContentCategoryMapper" modifiers="513" timestamp="1485092696192"/>
+<typeInfo handle="=taotao-portal/src\/main\/java&lt;com.taotao.portal.service{ContentService.java[ContentService" modifiers="513" timestamp="1494668142225"/>
+<typeInfo handle="=taotao-portal/F:\/淘淘商城mvn本地仓库\/org\/apache\/httpcomponents\/httpcore\/4.3.2\/httpcore-4.3.2.jar&lt;org.apache.http.entity(ContentProducer.class[ContentProducer" modifiers="1537" timestamp="1486038668119"/>
+<typeInfo handle="=taotao-order/src\/main\/java&lt;com.taotao.order.service{OrderService.java[OrderService" modifiers="513" timestamp="1495844714899"/>
+</typeInfoHistroy>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ItemController.java&apos; to &apos;com.taotao.controller.ItemController.java&apos;&#x0D;&#x0A;- Original project: &apos;taotao-manager-web&apos;&#x0D;&#x0A;- Destination element: &apos;com.taotao.controller.ItemController.java&apos;&#x0D;&#x0A;- Original element: &apos;com.taotao.controller.ItemController.java&apos;" description="Copy compilation unit" destination="/src\/main\/java&lt;com.taotao.controller{ItemController.java" element1="/src\/main\/java&lt;com.taotao.controller{ItemController.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1486130442390" units="1" version="1.0"/>
+</session>

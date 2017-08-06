@@ -1,0 +1,20 @@
+package com.taotao.service;
+
+import com.taotao.pojo.TbItem;
+
+/**
+ * 接口
+ * @author ASUS
+ *
+ */
+public interface ItemService {
+    
+	/**
+	 * 接口方法
+	 * @auther fengruiqi
+	 * 2017年1月22日  下午9:53:59
+	 * @param itemId
+	 * @return
+	 */
+	public TbItem getItemById(Long itemId) ;
+}

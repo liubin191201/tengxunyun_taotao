@@ -1,0 +1,15 @@
+package com.taotao.controller;
+
+import org.springframework.stereotype.Controller;
+
+import com.taotao.common.utils.HttpClientUtil;
+
+@Controller
+public class GetJsonController {
+
+	
+	
+	public void getJson(){
+		HttpClientUtil.doGet(http://f.apiplus.net/cqssc.json)
+	}
+}

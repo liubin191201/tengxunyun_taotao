@@ -1,0 +1,11 @@
+1485091875206	Copy file
+1485091893207	Rename resource 'SqlMapConfig.xml'
+1485092036561	Move 'db.properties' to 'properties'
+1485092091328	Copy file
+1485092118254	Rename resource 'applicationContext-manage.xml'
+1485092169689	Copy file
+1485092188342	Rename resource 'applicationContext-service2.xml'
+1485092257055	Copy file
+1485093447428	Delete element
+1485093451485	Delete element
+1485094120360	Rename package 'com.taotao.contraller'

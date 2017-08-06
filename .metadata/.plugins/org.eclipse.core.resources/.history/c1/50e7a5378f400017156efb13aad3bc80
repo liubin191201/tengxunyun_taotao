@@ -1,0 +1,18 @@
+package com.taotao.portal.controller;
+
+@Controller
+
+public class CartAction {
+	
+
+		@Autowired
+		private CartService cartService;
+		
+		@RequestMapping("/cart/add/{itemId}")
+		public String addCart(@PathVariable Long itemId, Integer num,
+				HttpServletResponse response, HttpServletRequest request) {
+			TaotaoResult result = cartService.addCart(itemId, num, request, response);
+			return "cartSuccess";
+		}
+
+}

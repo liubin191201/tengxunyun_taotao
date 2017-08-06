@@ -1,0 +1,13 @@
+com\taotao\sso\util\RedisKeyUtil.class
+com\taotao\sso\dao\impl\JedisClientPoolImpl.class
+com\taotao\sso\service\impl\RegisterServiceImpl.class
+com\taotao\sso\dao\impl\JedisClientClusterImpl.class
+com\taotao\sso\service\impl\LoginServiceImpl.class
+com\taotao\sso\controller\LoginController.class
+com\taotao\sso\controller\RegisterController.class
+com\taotao\sso\service\impl\TokenServiceImpl.class
+com\taotao\sso\service\RegisterService.class
+com\taotao\sso\controller\TokenController.class
+com\taotao\sso\dao\JedisClient.class
+com\taotao\sso\service\TokenService.class
+com\taotao\sso\service\LoginService.class

@@ -1,0 +1,104 @@
+package com.taotao.service.impl;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.taotao.common.pojo.AnswerResult;
+import com.taotao.common.pojo.EasyUIDateResult;
+import com.taotao.common.utils.IDUtils;
+import com.taotao.mapper.TbItemDescMapper;
+import com.taotao.mapper.TbItemMapper;
+import com.taotao.pojo.TbItem;
+import com.taotao.pojo.TbItemDesc;
+import com.taotao.pojo.TbItemExample;
+import com.taotao.pojo.TbItemExample.Criteria;
+import com.taotao.service.ItemService;
+import com.taotao.utils.ConstantUtils;
+
+/**
+ * 接口的实现
+ * @author fenguriqi
+ * 2017年1月22日 下午9:54:48
+ * ItemServiceImpl
+ */
+@Service
+public class ItemServiceImpl implements ItemService {
+
+	@Autowired
+	private TbItemMapper itemMapper;
+	
+	@Autowired
+	private TbItemDescMapper tbItemDescMapper;
+	
+	@Override
+	public TbItem getItemById(Long itemId) {
+		//TbItem item = itemMapper.selectByPrimaryKey(itemId);
+		TbItemExample example = new TbItemExample();
+		//创建查询条件
+		Criteria criteria = example.createCriteria();
+		criteria.andIdEqualTo(itemId);
+		List<TbItem> list = itemMapper.selectByExample(example);
+		//判断list中是否为空
+		TbItem item = null;
+		if (list != null && list.size() > 0) {
+			item = list.get(0);
+		}
+		return item;
+	}
+	/**
+	 *单表查询揭露结果封装
+	 */
+	@Override
+	public EasyUIDateResult getTotalMessage(Integer page, Integer rows) {
+		/**
+		 * 设置分页
+		 */
+		PageHelper.startPage(page, rows);
+		TbItemExample example=new TbItemExample();
+		
+		List<TbItem> list=itemMapper.selectByExample(example);
+		PageInfo<TbItem> pageInfo=new PageInfo<TbItem>(list);
+		
+		long total=pageInfo.getTotal();
+		//创建 返回值对象
+		EasyUIDateResult result=new EasyUIDateResult(total,list);
+		return result;
+	}
+	/**
+	 * 给商品描述表插入商品
+	 * 生成商品id
+	 * 补全item的属性
+	 */
+	@Override
+	public AnswerResult createItem(TbItem item, String desc) {
+		
+		/**组装信息*/
+		long itemId=IDUtils.genItemId();
+		
+		item.setId(itemId);
+		item.setStatus(ConstantUtils.getProductStatus());
+		item.setCreated(new Date());
+		item.setUpdated(new Date());
+		
+		/**插入新的商品*/
+		itemMapper.insert(item);
+		
+		TbItemDesc itemDesc=new TbItemDesc();
+		
+		itemDesc.setItemId(itemId);
+		itemDesc.setItemDesc(desc);
+		itemDesc.setUpdated(new Date());
+		itemDesc.setCreated(new Date());
+		
+		/**插入新的商品描述*/
+		tbItemDescMapper.insert(itemDesc);
+		
+		return AnswerResult.ok();
+	}
+
+}

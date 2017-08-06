@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+fontPropagated=true
+org.eclipse.jface.textfont=1|Courier New|12.0|0|WINDOWS|1|-16|0|0|0|400|0|0|0|0|3|2|1|49|Courier New;
+org.eclipse.wst.jsdt.internal.ui.navigator.layout=1
+org.eclipse.wst.jsdt.ui.editor.tab.width=
+org.eclipse.wst.jsdt.ui.exception.name=e
+org.eclipse.wst.jsdt.ui.formatterprofiles.version=11
+org.eclipse.wst.jsdt.ui.gettersetter.use.is=true
+org.eclipse.wst.jsdt.ui.javadoclocations.migrated=true
+org.eclipse.wst.jsdt.ui.text.code_templates_migrated=true
+org.eclipse.wst.jsdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="false" context\="org.eclipse.jsdt.constructorcomment_context" deleted\="false" description\="Comment for created constructors" enabled\="true" id\="org.eclipse.wst.jsdt.ui.text.codetemplates.constructorcomment" name\="constructorcomment">/**\r\n *@author fengruiqi\r\n * @date  @time\r\n * ${tags}\r\n */</template><template autoinsert\="false" context\="org.eclipse.jsdt.filecomment_context" deleted\="false" description\="Comment for created JavaScript files" enabled\="true" id\="org.eclipse.wst.jsdt.ui.text.codetemplates.filecomment" name\="filecomment">/**\r\n * @author  fengruiqi\r\n * @date  @time\r\n */</template><template autoinsert\="false" context\="org.eclipse.jsdt.typecomment_context" deleted\="false" description\="Comment for created types" enabled\="true" id\="org.eclipse.wst.jsdt.ui.text.codetemplates.typecomment" name\="typecomment">/**\r\n * @author fengruiqi\r\n * @date  @time\r\n * ${tags}\r\n */</template><template autoinsert\="false" context\="org.eclipse.jsdt.fieldcomment_context" deleted\="false" description\="Comment for vars" enabled\="true" id\="org.eclipse.wst.jsdt.ui.text.codetemplates.fieldcomment" name\="fieldcomment">/**\r\n * @author fengruiqi\r\n * @date  @time\r\n */</template><template autoinsert\="false" context\="org.eclipse.jsdt.methodcomment_context" deleted\="false" description\="Comment for non-overriding function" enabled\="true" id\="org.eclipse.wst.jsdt.ui.text.codetemplates.methodcomment" name\="methodcomment">/**\r\n *@author fengruiqi\r\n * @date  @time\r\n * ${tags}\r\n */</template><template autoinsert\="false" context\="org.eclipse.jsdt.overridecomment_context" deleted\="false" description\="Comment for overriding functions" enabled\="true" id\="org.eclipse.wst.jsdt.ui.text.codetemplates.overridecomment" name\="overridecomment">/* (non-JSDoc)\r\n * @author fengruiqi\r\n * @date  @time\r\n * ${tags}\r\n */</template><template autoinsert\="false" context\="org.eclipse.jsdt.delegatecomment_context" deleted\="false" description\="Comment for delegate functions" enabled\="true" id\="org.eclipse.wst.jsdt.ui.text.codetemplates.delegatecomment" name\="delegatecomment">/**\r\n * @author fengruiqi\r\n * @date  @time\r\n * ${tags}\r\n */</template></templates>
+proposalOrderMigrated=true
+tabWidthPropagated=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

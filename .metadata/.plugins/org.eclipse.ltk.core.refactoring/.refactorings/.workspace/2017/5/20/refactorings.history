@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;taotao-serarch&apos; to &apos;taotao-search&apos;" description="Rename resource &apos;taotao-serarch&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/taotao-serarch" name="taotao-search" stamp="1494770694452" updateReferences="true"/>
+</session>

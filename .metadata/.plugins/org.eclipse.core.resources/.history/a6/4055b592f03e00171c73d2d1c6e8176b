@@ -1,0 +1,158 @@
+package com.taotao.rest.service.impl;
+
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.taotao.common.utils.JsonUtils;
+import com.taotao.mapper.TbItemDescMapper;
+import com.taotao.mapper.TbItemMapper;
+import com.taotao.pojo.TbItem;
+import com.taotao.pojo.TbItemDesc;
+import com.taotao.pojo.TbItemParamItem;
+import com.taotao.rest.dao.JedisClient;
+import com.taotao.rest.service.ItemService;
+import com.taotao.rest.util.RedisKeyUtil;
+
+/**
+ * 查询商品信息Service
+ * @author fenguriqi
+ * 2017年5月22日 下午7:41:42
+ * ItemService
+ */
+public class ItemServiceImpl implements ItemService {
+
+	/**
+	 * 商品mapper
+	 */
+	@Autowired
+	private TbItemMapper itemMapper;
+	
+	/**
+	 * 商品描述mapper
+	 */
+	@Autowired
+	private TbItemDescMapper  itemDescMapper ;
+	@Autowired
+	private JedisClient  client;
+	
+	/**
+	 * 根据商品id 查询商品信息
+	 * @auther fengruiqi
+	 * 2017年5月22日  下午7:42:10
+	 * @param itemId
+	 * @return
+	 */
+	@Override
+	public TbItem getItem(Long itemId) {
+		try {
+			String json=client.get(RedisKeyUtil.REDIS_ITEM_KEY+":"+RedisKeyUtil.ITEM_BASE_INFO_KEY+":"+itemId);
+			if(StringUtils.isNotBlank(json)){
+				TbItem item=JsonUtils.jsonToPojo(json, TbItem.class);
+				return item;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		TbItem item=itemMapper.selectByPrimaryKey(itemId);
+		
+		try {
+			client.set(RedisKeyUtil.REDIS_ITEM_KEY+":"+RedisKeyUtil.ITEM_BASE_INFO_KEY+":"+itemId, 
+					JsonUtils.objectToJson(item));
+			client.expire(RedisKeyUtil.REDIS_ITEM_KEY+":"+RedisKeyUtil.ITEM_BASE_INFO_KEY+":"+itemId,
+					RedisKeyUtil.REDIS_EXPIRE_SECOND);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return item;
+	}
+
+	/**
+	 *查询商品描述详情 
+	 * @auther fengruiqi
+	 * 2017年5月22日  下午9:08:25
+	 * @param itemId
+	 * @return
+	 */
+	@Override
+	public TbItemDesc getItemDesc(long itemId) {
+		try {
+			String json = client.get(RedisKeyUtil.REDIS_ITEM_KEY + ":DESC:" + itemId);
+			// 需要判断是否取到商品信息
+			if (!StringUtils.isBlank(json)) {
+				// 把json转换成java对象
+				TbItemDesc itemDesc = JsonUtils.jsonToPojo(json, TbItemDesc.class);
+				// 转换失败，逃过缓存逻辑
+				if (null == itemDesc) {
+					throw new Exception("json数据转换失败");
+				}
+				return itemDesc;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// 从mysql中查询商品描述
+		TbItemDesc itemDesc = itemDescMapper.selectByPrimaryKey(itemId);
+
+		// 把商品信息保存到redis中
+		try {
+			client.set(RedisKeyUtil.REDIS_ITEM_KEY + ":DESC:" + itemId, JsonUtils.objectToJson(itemDesc));
+			client.expire(RedisKeyUtil.REDIS_ITEM_KEY + ":DESC:" + itemId, RedisKeyUtil.REDIS_EXPIRE_SECOND);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return itemDesc;
+	}
+
+	/**
+	 * 查询商品规格
+	 * @auther fengruiqi
+	 * 2017年5月22日  下午9:08:53
+	 * @param itemId
+	 * @return
+	 */
+	@Override
+	public TbItemParamItem getItemParam(long itemId) {
+		// 从redis中命中
+				// 先到redis中查询商品信息
+				try {
+					String json = client.get(RedisKeyUtil.REDIS_ITEM_KEY + ":PARAM:" + itemId);
+					// 需要判断是否取到商品信息
+					if (!StringUtils.isBlank(json)) {
+						// 把json转换成java对象
+						TbItemParamItem itemParamItem = JsonUtils.jsonToPojo(json, TbItemParamItem.class);
+						// 转换失败，跳过缓存逻辑
+						if (null == itemParamItem) {
+							throw new Exception("json数据转换失败");
+						}
+						return itemParamItem;
+					}
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+				// 从数据库中查询规格参数
+				TbItemParamItemExample example = new TbItemParamItemExample();
+				Criteria criteria = example.createCriteria();
+				criteria.andItemIdEqualTo(itemId);
+				List<TbItemParamItem> list = itemParamItemMapper.selectByExampleWithBLOBs(example);
+				if (list != null && !list.isEmpty()) {
+					TbItemParamItem itemParamItem = list.get(0);
+					//此处把规格参数信息添加到redis中。
+					// 把商品信息保存到redis中
+					try {
+						client.set(RedisKeyUtil.REDIS_ITEM_KEY + ":PARAM:" + itemId, JsonUtils.objectToJson(itemParamItem));
+						client.expire(RedisKeyUtil.REDIS_ITEM_KEY + ":PARAM:" + itemId, RedisKeyUtil.REDIS_EXPIRE_SECOND);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					return itemParamItem;
+				}
+				return null;
+			}
+	}
+
+}
